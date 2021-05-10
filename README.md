@@ -1,7 +1,7 @@
-Role Name
-=========
 
-A brief description of the role goes here.
+Role-For-Launching-EC2-instance-for-K8S-cluster
+=========
+This Role will Lauch the EC2 Instances required for Kubernetes Cluster i.e one master node and two slave nodes.
 
 Requirements
 ------------
