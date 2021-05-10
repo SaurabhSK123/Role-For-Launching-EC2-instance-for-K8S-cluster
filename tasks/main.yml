@@ -1,0 +1,38 @@
+---
+# tasks file for launch_ec2
+
+ - name: Launch Kubernetes Master_Node on AWS
+   ec2:
+       region: "{{ region }}"
+       instance_type: "{{ instance_type }}"
+       key_name: "{{ instance_key_name }}"
+       image: "{{ image }}"
+       vpc_subnet_id: "{{ subnet_id }}"
+       group_id: "{{ sg }}"
+       count: "{{ master_count }}"
+       wait: yes
+       instance_tags:
+           name: "{{ tag_for_master }}"
+       state: present
+       assign_public_ip: yes
+       aws_access_key: "{{ a_key }}"
+       aws_secret_key: "{{ s_key }}"
+
+
+ - name: Launch Kubernetes Slave_Node on AWS
+   ec2:
+       region: "{{ region }}"
+       instance_type: "{{ instance_type }}"
+       key_name: "{{ instance_key_name }}"
+       image: "{{ image }}"
+       group_id: "{{ sg }}"
+       vpc_subnet_id: "{{ subnet_id }}"
+       count: "{{ slave_count }}"
+       wait: yes
+       instance_tags:
+           name: "{{ tag_for_slave }}"
+       state: present
+       assign_public_ip: yes
+       aws_access_key: "{{ a_key }}"
+       aws_secret_key: "{{ s_key }}"
+

@@ -1,0 +1,14 @@
+---
+# vars file for launch_ec2
+a_key: AXXXXXXXXXXXXXXXXXXXX
+s_key: KXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+region: ap-south-1
+instance_type: t2.micro
+instance_key_name: mohit 
+image: ami-0bcf5425cdc1d8a85
+subnet_id: subnet-c0cbd5a8
+sg: sg-1f917067
+master_count: 1
+slave_count: 2
+tag_for_master: Kubernetes_Master 
+tag_for_slave: Kubernetes_Slave
